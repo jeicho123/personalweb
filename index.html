@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <script src="https://kit.fontawesome.com/e52ccfa142.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <i class="fa-solid fa-chess" style="font-size: 25px; color: bisque;"></i>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <span class="typing"></span>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="image/user.jpg" style="max-width: 100%; max-height: 100%;">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    I'm currently a third year CS major at the University of Chicago. I'm hoping
+                    to get experience in both the front-end and back-end aspect of software engineering. 
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Python</span><br>*</li>
+                        <li><span>HTML/CSS/JavaScript</span><br>Web Development</li>
+                        <li><span>R</span><br>Data Analysis</li>
+                        <li><span>Chess</span><br>FIDE Master</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Aug 2022 - Sep 2022</span><br>Intern at Beryl8 Plus<br><i class="fas fa-circle-arrow-right"></i> Designed an automated probation record-keeping interface using Salesforce</li>
+                        <li><span>Jul 2021 - Aug 2021</span><br>Intern at Rayliant Global Advisors<br><i class="fas fa-circle-arrow-right"></i> Built an Excel spreadsheet that recorded account receivable days for a list of 25 clients and forecasted their payment dates for following quarters</li>
+                        <li><span>Jun 2020 - Jul 2020</span><br>Intern at Bualuang Securities<br><i class="fas fa-circle-arrow-right"></i> Analyzed 2006 & 2014 Thai coup to see for significance on return rate of Thai stocks using T-tests</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020 - Current</span><br>University of Chicago</li>
+                        <li><span>2016 - 2020</span><br>Choate Rosemary Hall</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <i class="fas fa-paper-plane"></i> jeichenho@uchicago.com</p>
+                <div class="social-icons">
+                    <a href="https://github.com/jeicho123"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jei-ho-a638b8262/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+    var typed = new Typed(".typing", {
+        strings: ["Hi, I'm Jei. Nice to meet you!", "你好，我叫杰丞. 幸会幸会!", "สวัสดีครับฉันชื่อเจยินดีที่ได้รู้จัก."],
+        typeSpeed: 150,
+        backSpeed: 80,
+        loop: true
+    });
+
+</script>
+</body>
+</html>
