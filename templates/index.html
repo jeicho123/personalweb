@@ -7,7 +7,7 @@
     <title>Personal Website</title>
     <script src="https://kit.fontawesome.com/e52ccfa142.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <div id="header">
@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="image/user.jpg" style="max-width: 100%; max-height: 100%;">
+                <img src="static/user.jpg" style="max-width: 100%; max-height: 100%;">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -81,9 +81,9 @@
                 </div>
             </div>
             <div class="contact-right">
-                <form>
+                <form method="POST" action="/">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn">Submit</button>
                 </form>
